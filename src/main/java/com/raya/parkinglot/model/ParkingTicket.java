@@ -1,4 +1,4 @@
-package com.raya.parkinglot.model.enums;
+package com.raya.parkinglot.model;
 
 import java.time.LocalDateTime;
 

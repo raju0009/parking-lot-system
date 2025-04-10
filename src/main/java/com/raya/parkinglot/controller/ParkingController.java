@@ -2,7 +2,7 @@ package com.raya.parkinglot.controller;
 
 import com.raya.parkinglot.dto.Ticket;
 import com.raya.parkinglot.dto.Vehicle;
-import com.raya.parkinglot.model.enums.ParkingTicket;
+import com.raya.parkinglot.model.ParkingTicket;
 import com.raya.parkinglot.service.ParkingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

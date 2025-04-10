@@ -1,6 +1,6 @@
 package com.raya.parkinglot.service;
 
-import com.raya.parkinglot.model.enums.ParkingTicket;
+import com.raya.parkinglot.model.ParkingTicket;
 import com.raya.parkinglot.model.enums.SpotType;
 import com.raya.parkinglot.model.enums.VehicleType;
 import com.raya.parkinglot.dto.ParkingSpot;
