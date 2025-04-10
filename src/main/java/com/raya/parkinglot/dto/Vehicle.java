@@ -9,17 +9,17 @@ import jakarta.persistence.Id;
 @Entity
 public class Vehicle {
     @Id
-    private String licensePlate;
+    private String registrationNumber;
 
     @Enumerated(EnumType.STRING)
     private VehicleType type;
 
-    public String getLicensePlate() {
-        return licensePlate;
+    public String getRegistrationNumber() {
+        return registrationNumber;
     }
 
-    public void setLicensePlate(String licensePlate) {
-        this.licensePlate = licensePlate;
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
     }
 
     public VehicleType getType() {

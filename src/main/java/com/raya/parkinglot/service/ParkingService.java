@@ -42,7 +42,7 @@ public class ParkingService {
 
         ParkingTicket parkingTicket = new ParkingTicket();
         parkingTicket.setNumber(savedTicket.getId());
-        parkingTicket.setVehicleNumber(savedTicket.getVehicle().getLicensePlate());
+        parkingTicket.setVehicleNumber(savedTicket.getVehicle().getRegistrationNumber());
         parkingTicket.setVehicleType(savedTicket.getVehicle().getType().toString());
         parkingTicket.setParkingSpotNumber(savedTicket.getSpot().getId());
         parkingTicket.setEntryTime(savedTicket.getEntryTime());
