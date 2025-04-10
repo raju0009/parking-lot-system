@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 @Service
 public class ParkingService {
@@ -25,8 +26,14 @@ public class ParkingService {
 
     public ParkingTicket parkVehicle(Vehicle vehicle) {
         SpotType preferredType = mapVehicleToSpot(vehicle.getType());
-        ParkingSpot spot = spotRepo.findFirstByIsOccupiedFalseAndType(preferredType)
-                .orElseThrow(() -> new RuntimeException("No spot available"));
+
+        Optional<ParkingSpot> optionalSpot = spotRepo.findFirstByIsOccupiedFalseAndType(preferredType);
+
+        if (optionalSpot.isEmpty()) {
+            return null; // No spot available
+        }
+
+        ParkingSpot spot = optionalSpot.get();
 
         vehicleRepo.save(vehicle);
         spot.setOccupied(true);

@@ -16,8 +16,14 @@ public class ParkingController {
     private ParkingService parkingService;
 
     @PostMapping("/park")
-    public ResponseEntity<ParkingTicket> park(@RequestBody Vehicle vehicle) {
-        return ResponseEntity.ok(parkingService.parkVehicle(vehicle));
+    public ResponseEntity<?> park(@RequestBody Vehicle vehicle) {
+        ParkingTicket ticket = parkingService.parkVehicle(vehicle);
+
+        if (ticket == null) {
+            return ResponseEntity.status(400).body("No available spot for your vehicle type.");
+        }
+
+        return ResponseEntity.ok(ticket);
     }
 
     @PostMapping("/unpark/{ticketId}")
